@@ -30,5 +30,4 @@ word_count = FOREACH word_groups GENERATE group AS word , COUNT(filtered_words) 
 ordered_word_count = ORDER word_count BY count DESC;                                                                                                                                                               
 word_limit = LIMIT ordered_word_count 20;                                                                                                                                                                          
 
--- Instead of DUMP the result, I chose to store the result into /user/raj_ops/output/testFinal
 STORE word_limit INTO 'output/testFinal';
